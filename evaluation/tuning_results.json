@@ -1,0 +1,129 @@
+{
+  "generated_at": "2026-11-18T12:10:07+00:00",
+  "experiments": [
+    {
+      "experiment_name": "Baseline (Large Chunk / Low Threshold / No Dedupe)",
+      "config": {
+        "chunk_size_tokens": 1000,
+        "chunk_overlap_tokens": 50,
+        "top_k": 2,
+        "similarity_threshold": 0.1,
+        "deduplicate": false,
+        "enforce_doc_diversity": false,
+        "use_query_rewriter": false,
+        "embedding_model": "all-MiniLM-L6-v2"
+      },
+      "total_chunks": 11,
+      "summary": {
+        "total_cases": 16,
+        "grounded_cases": 12,
+        "unsupported_cases": 2,
+        "safety_cases": 2,
+        "recall_at_k": 1.0,
+        "source_hit_rate": 1.0,
+        "mrr": 0.9583,
+        "context_relevance": 0.9792,
+        "citation_correctness": 1.0,
+        "answer_faithfulness": 0.9826,
+        "answer_completeness": 0.9792,
+        "unsupported_abstention_rate": 0.5,
+        "safety_compliance_rate": 1.0,
+        "mean_retrieval_latency_ms": 13.88,
+        "p95_retrieval_latency_ms": 17.24
+      }
+    },
+    {
+      "experiment_name": "Fine-Grained Sub-Page Chunks (240 tokens)",
+      "config": {
+        "chunk_size_tokens": 240,
+        "chunk_overlap_tokens": 45,
+        "top_k": 4,
+        "similarity_threshold": 0.32,
+        "deduplicate": true,
+        "enforce_doc_diversity": true,
+        "use_query_rewriter": true,
+        "embedding_model": "all-MiniLM-L6-v2"
+      },
+      "total_chunks": 16,
+      "summary": {
+        "total_cases": 16,
+        "grounded_cases": 12,
+        "unsupported_cases": 2,
+        "safety_cases": 2,
+        "recall_at_k": 1.0,
+        "source_hit_rate": 1.0,
+        "mrr": 0.9583,
+        "context_relevance": 0.9792,
+        "citation_correctness": 1.0,
+        "answer_faithfulness": 0.9747,
+        "answer_completeness": 0.9792,
+        "unsupported_abstention_rate": 1.0,
+        "safety_compliance_rate": 1.0,
+        "mean_retrieval_latency_ms": 7.42,
+        "p95_retrieval_latency_ms": 18.27
+      }
+    },
+    {
+      "experiment_name": "High Top-K / Permissive Threshold (600 / k=6 / thr=0.25)",
+      "config": {
+        "chunk_size_tokens": 600,
+        "chunk_overlap_tokens": 100,
+        "top_k": 6,
+        "similarity_threshold": 0.25,
+        "deduplicate": true,
+        "enforce_doc_diversity": true,
+        "use_query_rewriter": true,
+        "embedding_model": "all-MiniLM-L6-v2"
+      },
+      "total_chunks": 11,
+      "summary": {
+        "total_cases": 16,
+        "grounded_cases": 12,
+        "unsupported_cases": 2,
+        "safety_cases": 2,
+        "recall_at_k": 1.0,
+        "source_hit_rate": 1.0,
+        "mrr": 1.0,
+        "context_relevance": 0.9792,
+        "citation_correctness": 1.0,
+        "answer_faithfulness": 0.9827,
+        "answer_completeness": 0.9792,
+        "unsupported_abstention_rate": 0.5,
+        "safety_compliance_rate": 1.0,
+        "mean_retrieval_latency_ms": 6.51,
+        "p95_retrieval_latency_ms": 8.3
+      }
+    },
+    {
+      "experiment_name": "Tuned Default (600 tokens / k=4 / thr=0.32)",
+      "config": {
+        "chunk_size_tokens": 600,
+        "chunk_overlap_tokens": 100,
+        "top_k": 4,
+        "similarity_threshold": 0.32,
+        "deduplicate": true,
+        "enforce_doc_diversity": true,
+        "use_query_rewriter": true,
+        "embedding_model": "all-MiniLM-L6-v2"
+      },
+      "total_chunks": 11,
+      "summary": {
+        "total_cases": 16,
+        "grounded_cases": 12,
+        "unsupported_cases": 2,
+        "safety_cases": 2,
+        "recall_at_k": 1.0,
+        "source_hit_rate": 1.0,
+        "mrr": 1.0,
+        "context_relevance": 0.9792,
+        "citation_correctness": 1.0,
+        "answer_faithfulness": 0.9827,
+        "answer_completeness": 0.9792,
+        "unsupported_abstention_rate": 1.0,
+        "safety_compliance_rate": 1.0,
+        "mean_retrieval_latency_ms": 6.87,
+        "p95_retrieval_latency_ms": 9.46
+      }
+    }
+  ]
+}
